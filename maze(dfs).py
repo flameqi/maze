@@ -1,3 +1,4 @@
+######################  This is a program of DFS(depth first search) coded by flame.qi#######################
 puzzle=\
     [[1,1,1,0,1,1,1],\
      [1,0,0,0,0,0,1],\
@@ -35,7 +36,8 @@ preY=0
 steps=0
 currDir="down"
 dir={'up':0,'down':0,'left':0,'right':0}
-print (puzzle)
+for pu in puzzle:
+    print (pu)
 print("#############################")
 
 
@@ -140,7 +142,7 @@ while (pathList[0][len(pathList[0])-1][0]!=endP):
             
         print ("X="+str(uav[index]['x'])+"Y="+str(uav[index]['y'])+"steps="+str(uav[index]['steps'])+"currDir="+uav[index]['currDir'])
     
-
+print('Output the result of DFS:')
 for j in range(len(pathList)):
     for i in range(len(pathList[j])):
         print (pathList[0][i])

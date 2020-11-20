@@ -1,3 +1,4 @@
+######################This is a program of BFS (breadth first search)coded by flame.qi#######################
 #encoding = utf-8
 import os
 import copy#列表和字典需要的深度复制
