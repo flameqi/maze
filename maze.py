@@ -1,4 +1,5 @@
 #encoding = utf-8
+import os
 import copy#列表和字典需要的深度复制
 #迷宫数组
 puzzle=\
@@ -29,8 +30,24 @@ preX=-1
 preY=-1
 index=0
 dir={'up':0,'down':0,'left':0,'right':0}
-print (puzzle)
-print("#############################")
+print("迷宫、起点和终点：")
+a=[]
+for i in range(XLEN+1):
+    a.append(i)
+a.insert(0,'y|x')
+print(a)
+i=0
+puz=copy.deepcopy(puzzle)
+
+for pu in puz:
+    pu.insert(0,str(i)+': ')
+    i+=1
+    print (pu)
+print("起点：")
+print(startP)
+print("终点：")
+print(endP)
+print("############以下是广度优先搜索结果#################")
 
 
 while (pathList['front']!=pathList['rear']):
@@ -131,6 +148,7 @@ while (k>-1):
         steps[yy][xx]='←'
 for j in range(len(pathList['node'])):#输出整个队列也就是输出搜索过程
     print (pathList['node'][j])
+print("最佳路线：")
 for s in steps:#输出最佳路线
     print (s)
 
@@ -208,5 +226,7 @@ while (True):
         sub=False
     if(uavs[len(uavs)-1]['pIndex']==endNodeIndex):#如果到终点则结束。
         break
+print("无人机行进过程")
 for ww in uavs:
     print (ww)
+os.system('pause') #按任意键继续
